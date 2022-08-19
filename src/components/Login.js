@@ -1,12 +1,17 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 const Login = () => {
+  const navigate = useNavigate();
+
   const handleSubmit = (e) => {
     const target = e.target;
     e.preventDefault();
     const name = target.name.value;
     const email = target.email.value;
     const password = target.password.value;
+
+    navigate("/home");
 
     console.log(name, email, password);
   };
