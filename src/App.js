@@ -1,5 +1,7 @@
+import PrincipalRouter from "./routers/PrincipalRouter";
+
 function App() {
-  return <p>asd</p>;
+  return <PrincipalRouter />;
 }
 
 export default App;
