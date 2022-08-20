@@ -7,7 +7,7 @@ import Header from "../components/Header";
 const PrincipalRouter = () => {
   return (
     <BrowserRouter>
-      <Header />
+      {/* <Header /> */}
       <Routes>
         <Route path="/" element={<Login />} />
         <Route path="/inicio" element={<Home />} />
