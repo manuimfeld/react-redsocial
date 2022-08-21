@@ -1,33 +1,45 @@
-import React from "react";
-import { useNavigate } from "react-router-dom";
+import React, { useEffect } from "react";
 import registerUser from "../helpers/registerUser";
+import { Link, useNavigate } from "react-router-dom";
 
-const Register = () => {
+const Register = ({ user, setUser }) => {
   const navigate = useNavigate();
 
   const handleSubmit = (e) => {
-    const target = e.target;
+    /*Form data*/
     e.preventDefault();
+    const target = e.target;
     const name = target.name.value;
     const email = target.email.value;
     const password = target.password.value;
-
-    /* navigate("/home"); */
-    registerUser(name, email, password);
+    /*Function register*/
+    registerUser(name, email, password, setUser);
   };
 
-  return (
-    <div>
-      <h1>Registrate</h1>
-      <form onSubmit={(e) => handleSubmit(e)}>
-        <input type="text" name="name" placeholder="username" />
-        <input type="email" name="email" placeholder="email" />
-        <input type="password" name="password" placeholder="password" />
-        <button type="submit">Registrar</button>
-      </form>
+  useEffect(() => {
+    /*Already are login, redirect to http://localhost:3000/inicio*/
+    if (user === true) {
+      navigate("/inicio");
+    }
+  }, [user]);
 
-      <h3>Ya tenés una cuenta? Inicia sesión</h3>
-    </div>
+  return (
+    <>
+      <section className="section-register">
+        <h1>Lo que está pasando ahora</h1>
+        <h4>Únete a Ñuiññer hoy mismo.</h4>
+        <form onSubmit={(e) => handleSubmit(e)}>
+          <input type="text" name="name" placeholder="Nombre de usuario" />
+          <input type="email" name="email" placeholder="Email" />
+          <input type="password" name="password" placeholder="Contraseña" />
+          <button type="submit">Crear cuenta</button>
+        </form>
+
+        <h5>
+          ¿Ya tienes una cuenta? <Link to="/login">Inicia sesión</Link>
+        </h5>
+      </section>
+    </>
   );
 };
 

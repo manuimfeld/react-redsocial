@@ -2,17 +2,25 @@ import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Register from "../components/Register";
 import Home from "../components/Home";
-import Header from "../components/Header";
 import Login from "../components/Login";
 
-const PrincipalRouter = () => {
+const PrincipalRouter = ({ user, setUser }) => {
   return (
     <BrowserRouter>
-      {/* <Header /> */}
       <Routes>
-        <Route path="/" element={<Register />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/inicio" element={<Home />} />
+        <Route
+          path="/register"
+          element={<Register user={user} setUser={setUser} />}
+        />
+        <Route
+          path="/login"
+          element={<Login user={user} setUser={setUser} />}
+        />
+        <Route path="/" element={<Home user={user} setUser={setUser} />} />
+        <Route
+          path="/inicio"
+          element={<Home user={user} setUser={setUser} />}
+        />
       </Routes>
     </BrowserRouter>
   );

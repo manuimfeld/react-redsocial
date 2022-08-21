@@ -1,3 +1,4 @@
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -12,31 +13,128 @@ code {
     monospace;
 }
 
+
+
+
+
+/* FONT */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap');
+
 :root {
-  --primmary-color: #F5821E;
+  --primmary-color: rgb(29, 155, 240);
   --primmary-font-color: #fff;
   --second-font-color-: #bdbdbd;
   --bg-color: #000000;
 }
 
-header {
-  width: 80vw;
-  height: 100vh;
-  background: var(--bg-color)
+/* REGISTER COMPONENT */
+.section-register, .section-login {
+  height: calc(100vh - 60px);
+  width: calc(100vw - 60px);
+  padding: 30px;
+  background: var(--bg-color);
+  color: var(--primmary-font-color);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  font-family: 'Roboto', sans-serif;
 }
 
-/* FEED */
+.section-register h1 {
+  font-size: 2.3em;
+  width: 70%;
+  margin: 0;
+}
+
+.section-register h4 {
+  font-size: 1.4rem;
+  font-weight: 400;
+  width: 70%;
+}
+
+.section-register form, .section-login form {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.section-register form input, .section-login form input {
+  height: 40px;
+  width: calc(100% - 20px);
+  border-radius: 4px;
+  border: 1px solid gray;
+  color: var(--primmary-font-color);
+  outline: none;
+  margin: 10px auto;
+  padding: 0 10px;
+  background: var(--bg-color);
+}
+
+.section-register form button, .section-login form button {
+  height: 40px;
+  width: 100%;
+  border-radius: 20px;
+  border: none;
+  outline: none;
+  background: var(--primmary-color);
+  margin: 10px auto;
+  color: var(--primmary-font-color);
+  cursor: pointer;
+}
+
+.section-register h5, .section-login h5{
+  margin: 10px auto;
+}
+
+.section-register h5 a, .section-login h5 a{
+  color: var(--primmary-color);
+  text-decoration: none;
+}
+
+/* LOGIN COMPONENT */
+.section-login {
+  text-align: center;
+}
+
+.section-login h1 {
+  font-size: 1.7em;
+  width: 100%;
+}
+
+/* HEADER */
+header {
+  width: 100vw;
+  height: 50px;
+  background: var(--bg-color);
+  position: sticky;
+  top: 0;
+  z-index: 5;
+}
 
 .nav-feed {
   height: 50px;
-  width: 100vw;
+  width: calc(100vw - 20px);
   background: var(--bg-color);
-  border-bottom: 1px solid white;
-  position: sticky;
-  top: 0;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-left: 20px;
 }
 
-/*section*/ .feed {
+.nav-feed h4 {
+  color: var(--primmary-font-color);
+  margin-left: 20px;
+}
+
+.user-logo {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+}
+
+/* FEED */
+/*section*/ .section-feed {
   min-height: 200vh;
   width: calc(100vw);
   background: var(--bg-color);
@@ -54,16 +152,55 @@ header {
   background: var(--bg-color);
   margin: 0 auto;
   border-bottom: 1px solid gray;
+  padding-top: 10px;
 }
 
-.post img {
-  width: 20%;
-  height: 60px;
+.post > img {
+  width: 50px;
+  height: 50px;
   border-radius: 50%;
   margin: 10px;
+  object-fit: cover;
+}
+
+.post-content {
+  width: 100%;
+}
+
+.post-content .username-post {
+  margin-top: 10px;
 }
 
 .post-content p {
-  color: white;
+  color: var(--primmary-font-color);
   font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  margin-top: 10px;
+}
+
+.button-post {
+  width: 100%;
+  padding: 0;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.button-post li {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-right: auto;
+}
+
+.button-post li img {
+  margin-right: 5px;
+  width: 20px;
+  height: 20px;
+  filter: invert(80%) sepia(5%) saturate(13%) hue-rotate(4deg) brightness(95%) contrast(92%);
+}
+
+.button-post li span {
+  color: var(--second-font-color-);
+  font-size: 14px;
+  font-weight: 300;
 }
