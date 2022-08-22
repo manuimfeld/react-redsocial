@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import Header from "./Header";
 import getPosts from "../helpers/getPosts";
 import CreatePostSvg from "../img/CreatePostSvg";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const Feed = () => {
   const [posts, setPosts] = useState([]);
@@ -20,10 +20,12 @@ const Feed = () => {
         {posts.map((post) => {
           return (
             <article className="post" key={post._id}>
-              <img
-                src="https://www.w3schools.com/howto/img_avatar2.png"
-                alt=""
-              />
+              <Link to={`/user/${post.postedByUser}`}>
+                <img
+                  src="https://www.w3schools.com/howto/img_avatar2.png"
+                  alt=""
+                />
+              </Link>
               <div className="post-content">
                 <p className="username-post">
                   <strong>{post.postedByUser}</strong>

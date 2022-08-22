@@ -4,6 +4,7 @@ import Register from "../components/Register";
 import Home from "../components/Home";
 import Login from "../components/Login";
 import ModalCreatePost from "../components/ModalCreatePost";
+import UserProfile from "../components/UserProfile";
 
 const PrincipalRouter = ({ user, setUser }) => {
   return (
@@ -23,6 +24,7 @@ const PrincipalRouter = ({ user, setUser }) => {
           element={<Home user={user} setUser={setUser} />}
         />
         <Route path="/create/post" element={<ModalCreatePost />} />
+        <Route path="/user/:id" element={<UserProfile />} />
       </Routes>
     </BrowserRouter>
   );
