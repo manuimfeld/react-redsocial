@@ -2,7 +2,7 @@ import axios from "axios";
 import sweetAlert from "../helpers/sweetAlert";
 
 const loginUser = (email, password, setUser) => {
-  const endpoint = "http://localhost:3001/api/auth/login";
+  const endpoint = "http://192.168.0.71:3001/api/auth/login";
   axios
     .post(endpoint, {
       email: email,
@@ -17,7 +17,8 @@ const loginUser = (email, password, setUser) => {
       console.log(err);
       sweetAlert(
         "Error al iniciar sesión",
-        "Email o contraseña invalidos",
+        /* "Email o contraseña invalidos", */
+        JSON.stringify(err),
         "error"
       );
     });

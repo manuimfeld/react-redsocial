@@ -1,9 +1,12 @@
 import React, { useEffect, useState } from "react";
 import Header from "./Header";
 import getPosts from "../helpers/getPosts";
+import CreatePostSvg from "../img/CreatePostSvg";
+import { useNavigate } from "react-router-dom";
 
 const Feed = () => {
   const [posts, setPosts] = useState([]);
+  const navigate = useNavigate();
 
   /*API CALL to get tweets/posts*/
   useEffect(() => {
@@ -41,6 +44,7 @@ const Feed = () => {
           );
         })}
       </section>
+      <CreatePostSvg openModal={() => navigate("/create/post")} />
     </>
   );
 };

@@ -9,7 +9,7 @@ const Login = ({ user, setUser }) => {
     /*Form data*/
     e.preventDefault();
     const target = e.target;
-    const email = target.email.value;
+    const email = target.username.value;
     const password = target.password.value;
     /*Function login */
     loginUser(email, password, setUser);
@@ -27,7 +27,7 @@ const Login = ({ user, setUser }) => {
       <section className="section-login">
         <h1>Inicia sesión en Ñuiññer</h1>
         <form onSubmit={(e) => handleSubmit(e)}>
-          <input type="email" name="email" placeholder="email" />
+          <input type="text" name="username" placeholder="email" />
           <input type="password" name="password" placeholder="password" />
           <button type="submit">Iniciar sesión</button>
         </form>

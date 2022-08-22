@@ -2,7 +2,7 @@ import axios from "axios";
 import sweetAlert from "../helpers/sweetAlert";
 
 const registerUser = (username, email, password, setUser) => {
-  const endpoint = "http://localhost:3001/api/auth/register";
+  const endpoint = "http://192.168.0.71:3001/api/auth/register";
   axios
     .post(endpoint, {
       username: username,

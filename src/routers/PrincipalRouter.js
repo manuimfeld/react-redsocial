@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Register from "../components/Register";
 import Home from "../components/Home";
 import Login from "../components/Login";
+import ModalCreatePost from "../components/ModalCreatePost";
 
 const PrincipalRouter = ({ user, setUser }) => {
   return (
@@ -21,6 +22,7 @@ const PrincipalRouter = ({ user, setUser }) => {
           path="/inicio"
           element={<Home user={user} setUser={setUser} />}
         />
+        <Route path="/create/post" element={<ModalCreatePost />} />
       </Routes>
     </BrowserRouter>
   );
