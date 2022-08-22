@@ -24,7 +24,7 @@ const PrincipalRouter = ({ user, setUser }) => {
           element={<Home user={user} setUser={setUser} />}
         />
         <Route path="/create/post" element={<ModalCreatePost />} />
-        <Route path="/user/:id" element={<UserProfile />} />
+        <Route path="/profile/:id" element={<UserProfile />} />
       </Routes>
     </BrowserRouter>
   );

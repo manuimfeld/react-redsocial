@@ -20,10 +20,13 @@ const Feed = () => {
         {posts.map((post) => {
           return (
             <article className="post" key={post._id}>
-              <Link to={`/user/${post.postedByUser}`}>
+              <Link
+                to={`/profile/${post.postedByUser}?user=${post.postedByUser}`}
+              >
                 <img
                   src="https://www.w3schools.com/howto/img_avatar2.png"
                   alt=""
+                  className="user-logo-post"
                 />
               </Link>
               <div className="post-content">
