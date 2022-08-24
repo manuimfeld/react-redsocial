@@ -8,7 +8,7 @@ const Feed = () => {
   const [posts, setPosts] = useState([]);
   const navigate = useNavigate();
 
-  /*API CALL to get tweets/posts*/
+  //Api call GET tweets/posts
   useEffect(() => {
     getPosts(setPosts);
   }, []);
@@ -16,6 +16,7 @@ const Feed = () => {
   return (
     <>
       <Header />
+
       <section className="section-feed">
         {posts.map((post) => {
           return (
@@ -49,6 +50,8 @@ const Feed = () => {
           );
         })}
       </section>
+
+      {/* COMPONENT SVG fixed para crear un POST  "Open Modal"  */}
       <CreatePostSvg openModal={() => navigate("/create/post")} />
     </>
   );

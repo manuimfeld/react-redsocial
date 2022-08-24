@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 const Home = ({ user }) => {
   const navigate = useNavigate();
 
-  /*Already are NOT login, redirect to http://localhost:3000/register*/
+  /*Si no estás logueado, se te redirige a http://localhost:3000/register*/
   useEffect(() => {
     if (user === false) {
       navigate("/register");

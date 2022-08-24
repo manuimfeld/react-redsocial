@@ -1,6 +1,6 @@
 import React from "react";
 
-const InfoUserProfile = () => {
+const InfoUserProfile = ({ username, userFollowers, userFollows }) => {
   return (
     <section className="section-info-userprofile">
       <img
@@ -14,12 +14,11 @@ const InfoUserProfile = () => {
         className="main-image-profile"
       />
       <div className="info-profile">
-        <h4>manu</h4>
-        <p>@manu</p>
-        <p>posible descripcion</p>
+        <h4>{username}</h4>
+        <p>@{username}</p>
         <ul>
-          <li>93 seguidores</li>
-          <li>31 seguidos</li>
+          <li>{userFollowers.length} seguidores</li>
+          <li>{userFollows.length} seguidos</li>
         </ul>
       </div>
     </section>

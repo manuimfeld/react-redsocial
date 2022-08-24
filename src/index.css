@@ -342,8 +342,9 @@ header {
   margin: 0;
 }
 
-.info-profile p:nth-child(2) {
-  margin: 5px 0 0 0;
+.info-profile p {
+  margin: 0px 0 0 0;
+  color: var(--second-font-color-)
 }
 
 .info-profile ul {

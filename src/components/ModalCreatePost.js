@@ -6,10 +6,12 @@ const ModalCreatePost = () => {
   const navigate = useNavigate();
 
   const handleSubmit = (e) => {
+    // GET Form data
     e.preventDefault();
     const target = e.target;
     const content = target.content.value;
 
+    // Api call POST, al crear un post se te redirige a http://localhost:3001/inicio
     createPost(content, navigate);
   };
 

@@ -6,17 +6,17 @@ const Login = ({ user, setUser }) => {
   const navigate = useNavigate();
 
   const handleSubmit = (e) => {
-    /*Form data*/
+    // Get form data
     e.preventDefault();
     const target = e.target;
     const email = target.username.value;
     const password = target.password.value;
-    /*Function login */
+    // Api call POST login
     loginUser(email, password, setUser);
   };
 
   useEffect(() => {
-    /*Already are login, redirect to http://localhost:3000/inicio*/
+    // Si estás logueado, se te redirige a http://localhost:3000/inicio
     if (user === true) {
       navigate("/inicio");
     }
