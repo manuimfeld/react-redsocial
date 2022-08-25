@@ -7,6 +7,7 @@ import CreatePostSvg from "../CreatePostSvg"; // CREATE POST COMPONENT
 import NavUserProfile from "./NavUserProfile"; // HEADER PROFILE COMPONENT
 import InfoUserProfile from "./InfoUserProfile"; // INFO_PROFILE COMPONENT
 import "../../index.css"; // STYLE.CSS
+import Post from "../Post";
 
 const UserProfile = () => {
   const [userPosts, setUserPosts] = useState([]); // Posts del usuario
@@ -41,36 +42,7 @@ const UserProfile = () => {
           />
           <section className="section-feed">
             {userPosts.map((post) => {
-              return (
-                <article className="post" key={post._id}>
-                  <img
-                    src="https://www.w3schools.com/howto/img_avatar2.png"
-                    alt=""
-                    className="user-logo-post"
-                  />
-                  <div className="post-content">
-                    <p className="username-post">
-                      <strong>{post.postedByUser}</strong>
-                    </p>
-                    <p>{post.content}</p>
-                    <ul className="button-post">
-                      <li>
-                        <img src={require("../../img/like-icon.png")} alt="" />
-                        <span onClick={() => likePost(post._id)}>
-                          {post.likes} me gusta
-                        </span>
-                      </li>
-                      <li>
-                        <img
-                          src={require("../../img/comment-icon.png")}
-                          alt=""
-                        />
-                        <span>Comentar</span>
-                      </li>
-                    </ul>
-                  </div>
-                </article>
-              );
+              return <Post post={post} />;
             })}
           </section>
           <CreatePostSvg openModal={() => navigate("/create/post")} />
