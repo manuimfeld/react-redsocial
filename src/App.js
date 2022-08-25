@@ -2,15 +2,14 @@ import { useState, useEffect } from "react";
 import PrincipalRouter from "./routers/PrincipalRouter";
 
 function App() {
-  /*Validate if user already are Login*/
-  const [user, setUser] = useState(false);
+  const [user, setUser] = useState(false); // ¿El usuario está logueado?
 
   useEffect(() => {
-    /*If localStorage is null, user = false*/
     if (localStorage.getItem("JWT") === null) {
+      /*Si el item en localstorage es null =>  user = false*/
       setUser(!true);
-      /*If localStorage is not null, user = true */
     } else {
+      /*Si el item en localstorage no es null => user = true */
       setUser(true);
     }
   }, [user]);

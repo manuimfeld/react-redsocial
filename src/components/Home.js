@@ -5,11 +5,13 @@ import { useNavigate } from "react-router-dom";
 const Home = ({ user }) => {
   const navigate = useNavigate();
 
-  /*Si no estás logueado, se te redirige a http://localhost:3000/register*/
   useEffect(() => {
     if (user === false) {
+      //Si no estás logueado, se te redirige a http://localhost:3000/register
       navigate("/register");
     }
+
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [user]);
 
   return (

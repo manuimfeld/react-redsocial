@@ -1,12 +1,11 @@
 import React, { useEffect } from "react";
-import registerUser from "../helpers/registerUser";
+import registerUser from "../../helpers/registerUser";
 import { Link, useNavigate } from "react-router-dom";
 
 const Register = ({ user, setUser }) => {
   const navigate = useNavigate();
 
   const handleSubmit = (e) => {
-    /*Form data*/
     e.preventDefault();
     const target = e.target;
     const name = target.name.value;
@@ -17,10 +16,11 @@ const Register = ({ user, setUser }) => {
   };
 
   useEffect(() => {
-    /*Already are login, redirect to http://localhost:3000/inicio*/
     if (user === true) {
+      // Si estás logueado, se te redirige a http://localhost:3000/inicio
       navigate("/inicio");
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [user]);
 
   return (

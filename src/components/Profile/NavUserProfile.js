@@ -8,7 +8,7 @@ const NavUserProfile = ({ postsLength, username }) => {
     <header>
       <nav className="nav-feed">
         <img
-          src={require("../img/back-arrow.png")}
+          src={require("../../img/back-arrow.png")}
           alt=""
           className="profile-nav-logo"
           onClick={() => navigate(-1)}

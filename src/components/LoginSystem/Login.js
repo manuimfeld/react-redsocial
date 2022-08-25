@@ -1,12 +1,11 @@
 import React, { useEffect } from "react";
-import loginUser from "../helpers/loginUser";
+import loginUser from "../../helpers/loginUser";
 import { Link, useNavigate } from "react-router-dom";
 
 const Login = ({ user, setUser }) => {
   const navigate = useNavigate();
 
   const handleSubmit = (e) => {
-    // Get form data
     e.preventDefault();
     const target = e.target;
     const email = target.username.value;
@@ -16,10 +15,11 @@ const Login = ({ user, setUser }) => {
   };
 
   useEffect(() => {
-    // Si estás logueado, se te redirige a http://localhost:3000/inicio
     if (user === true) {
+      // Si estás logueado, se te redirige a http://localhost:3000/inicio
       navigate("/inicio");
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [user]);
 
   return (

@@ -6,7 +6,6 @@ const ModalCreatePost = () => {
   const navigate = useNavigate();
 
   const handleSubmit = (e) => {
-    // GET Form data
     e.preventDefault();
     const target = e.target;
     const content = target.content.value;

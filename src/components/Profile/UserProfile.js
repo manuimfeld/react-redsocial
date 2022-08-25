@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from "react";
-import getUserPosts from "../helpers/getUserPosts";
-import CreatePostSvg from "../img/CreatePostSvg";
 import { useNavigate } from "react-router-dom";
-import "../index.css";
-import NavUserProfile from "./NavUserProfile";
-import InfoUserProfile from "./InfoUserProfile";
-import { getUserFollow, getUserFollowers } from "../helpers/getUserFollow";
+import getUserPosts from "../../helpers/getUserPosts"; //API CALL FUNCTION
+import { getUserFollow, getUserFollowers } from "../../helpers/getUserFollow"; //API CALL FUNCTION
+import likePost from "../../helpers/likePost";
+import CreatePostSvg from "../CreatePostSvg"; // CREATE POST COMPONENT
+import NavUserProfile from "./NavUserProfile"; // HEADER PROFILE COMPONENT
+import InfoUserProfile from "./InfoUserProfile"; // INFO_PROFILE COMPONENT
+import "../../index.css"; // STYLE.CSS
 
 const UserProfile = () => {
   const [userPosts, setUserPosts] = useState([]); // Posts del usuario
@@ -54,11 +55,16 @@ const UserProfile = () => {
                     <p>{post.content}</p>
                     <ul className="button-post">
                       <li>
-                        <img src={require("../img/like-icon.png")} alt="" />
-                        <span>Me gusta</span>
+                        <img src={require("../../img/like-icon.png")} alt="" />
+                        <span onClick={() => likePost(post._id)}>
+                          {post.likes} me gusta
+                        </span>
                       </li>
                       <li>
-                        <img src={require("../img/comment-icon.png")} alt="" />
+                        <img
+                          src={require("../../img/comment-icon.png")}
+                          alt=""
+                        />
                         <span>Comentar</span>
                       </li>
                     </ul>

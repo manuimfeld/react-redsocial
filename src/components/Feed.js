@@ -1,15 +1,16 @@
 import React, { useEffect, useState } from "react";
 import Header from "./Header";
 import getPosts from "../helpers/getPosts";
-import CreatePostSvg from "../img/CreatePostSvg";
+import likePost from "../helpers/likePost";
+import CreatePostSvg from "./CreatePostSvg";
 import { Link, useNavigate } from "react-router-dom";
 
 const Feed = () => {
   const [posts, setPosts] = useState([]);
   const navigate = useNavigate();
 
-  //Api call GET tweets/posts
   useEffect(() => {
+    //Api call GET tweets/posts
     getPosts(setPosts);
   }, []);
 
@@ -38,7 +39,9 @@ const Feed = () => {
                 <ul className="button-post">
                   <li>
                     <img src={require("../img/like-icon.png")} alt="" />
-                    <span>Me gusta</span>
+                    <span onClick={() => likePost(post._id)}>
+                      {post.likes} me gusta
+                    </span>
                   </li>
                   <li>
                     <img src={require("../img/comment-icon.png")} alt="" />
@@ -51,7 +54,6 @@ const Feed = () => {
         })}
       </section>
 
-      {/* COMPONENT SVG fixed para crear un POST  "Open Modal"  */}
       <CreatePostSvg openModal={() => navigate("/create/post")} />
     </>
   );
