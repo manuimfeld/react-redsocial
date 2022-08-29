@@ -14,17 +14,14 @@ const PrincipalRouter = ({ user, setUser }) => {
           path="/register"
           element={<Register user={user} setUser={setUser} />}
         />
-
         <Route
           path="/login"
           element={<Login user={user} setUser={setUser} />}
         />
-
         <Route
           path="/inicio"
           element={<Home user={user} setUser={setUser} />}
         />
-
         <Route path="/" element={<Home user={user} setUser={setUser} />} />
         <Route path="/create/post" element={<ModalCreatePost />} />
         <Route path="/profile/:id" element={<UserProfile />} />

@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import registerUser from "../../helpers/registerUser";
 import { Link, useNavigate } from "react-router-dom";
+import "../../styles/register.css";
 
 const Register = ({ user, setUser }) => {
   const navigate = useNavigate();

@@ -1,6 +1,8 @@
 import React, { useEffect } from "react";
-import Feed from "./Feed";
 import { useNavigate } from "react-router-dom";
+import AsideBrowser from "./AsideBrowser";
+import AsideNav from "./AsideNav";
+import Feed from "./Feed";
 
 const Home = ({ user }) => {
   const navigate = useNavigate();
@@ -15,9 +17,11 @@ const Home = ({ user }) => {
   }, [user]);
 
   return (
-    <main>
+    <>
+      <AsideNav />
       <Feed />
-    </main>
+      <AsideBrowser />
+    </>
   );
 };
 

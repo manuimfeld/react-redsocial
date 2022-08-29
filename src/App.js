@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import PrincipalRouter from "./routers/PrincipalRouter";
+import "./styles/layout.css";
 
 function App() {
   const [user, setUser] = useState(false); // ¿El usuario está logueado?
@@ -14,7 +15,11 @@ function App() {
     }
   }, [user]);
 
-  return <PrincipalRouter user={user} setUser={setUser} />;
+  return (
+    <div className="layout">
+      <PrincipalRouter user={user} setUser={setUser} />
+    </div>
+  );
 }
 
 export default App;

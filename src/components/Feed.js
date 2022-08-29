@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
-import Header from "./Header";
-import getPosts from "../helpers/getPosts";
-import CreatePostSvg from "./CreatePostSvg";
 import { useNavigate } from "react-router-dom";
+import getPosts from "../helpers/getPosts";
+import Header from "./Header";
 import Post from "./Post";
+import CreatePostSvg from "./CreatePostSvg";
 
 const Feed = () => {
   const [posts, setPosts] = useState([]);
@@ -16,9 +16,8 @@ const Feed = () => {
 
   return (
     <>
-      <Header />
-
       <section className="section-feed">
+        <Header />
         {posts.map((post) => {
           return <Post post={post} />;
         })}

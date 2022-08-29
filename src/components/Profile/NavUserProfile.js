@@ -1,7 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 
-const NavUserProfile = ({ postsLength, username }) => {
+const NavUserProfile = ({ userPostsLength, username }) => {
   const navigate = useNavigate();
 
   return (
@@ -15,7 +15,7 @@ const NavUserProfile = ({ postsLength, username }) => {
         />
         <div className="profile-data">
           <h4>{username}</h4>
-          <p>{postsLength} publicaciones</p>
+          <p>{userPostsLength} publicaciones</p>
         </div>
       </nav>
     </header>
