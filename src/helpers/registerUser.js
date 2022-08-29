@@ -16,7 +16,8 @@ const registerUser = (username, email, password, setUser) => {
         "Registraste tu cuenta correctamente",
         "success"
       );
-      setUser(true);
+      const data = res.data.data;
+      setUser([data.user]);
     })
     .catch((err) => console.log(err));
 };

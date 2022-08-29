@@ -9,11 +9,11 @@ function App() {
     if (localStorage.getItem("JWT") === null) {
       /*Si el item en localstorage es null =>  user = false*/
       setUser(!true);
-    } else {
-      /*Si el item en localstorage no es null => user = true */
-      setUser(true);
-    }
-  }, [user]);
+    } /* else {
+      /*Si el item en localstorage no es null => user = true */ /*
+      setUser(true)
+    } */
+  }, [user, setUser]);
 
   return (
     <div className="layout">

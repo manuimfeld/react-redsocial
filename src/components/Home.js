@@ -4,7 +4,7 @@ import AsideBrowser from "./AsideBrowser";
 import AsideNav from "./AsideNav";
 import Feed from "./Feed";
 
-const Home = ({ user }) => {
+const Home = ({ user, setUser }) => {
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -14,12 +14,12 @@ const Home = ({ user }) => {
     }
 
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [user]);
+  }, [user, setUser]);
 
   return (
     <>
-      <AsideNav />
-      <Feed />
+      <AsideNav setUser={setUser} />
+      <Feed user={user} />
       <AsideBrowser />
     </>
   );

@@ -5,7 +5,7 @@ import Header from "./Header";
 import Post from "./Post";
 import CreatePostSvg from "./CreatePostSvg";
 
-const Feed = () => {
+const Feed = ({ user }) => {
   const [posts, setPosts] = useState([]);
   const navigate = useNavigate();
 
@@ -18,8 +18,16 @@ const Feed = () => {
     <>
       <section className="section-feed">
         <Header />
-        {posts.map((post) => {
-          return <Post post={post} />;
+        {posts.map((post, index) => {
+          return (
+            <Post
+              post={post}
+              index={index}
+              user={user}
+              posts={posts}
+              setPosts={setPosts}
+            />
+          );
         })}
       </section>
 

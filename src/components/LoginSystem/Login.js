@@ -16,7 +16,7 @@ const Login = ({ user, setUser }) => {
   };
 
   useEffect(() => {
-    if (user === true) {
+    if (user !== false) {
       // Si estás logueado, se te redirige a http://localhost:3000/inicio
       navigate("/inicio");
     }

@@ -11,7 +11,8 @@ const loginUser = (email, password, setUser) => {
     .then((res) => {
       localStorage.setItem("JWT", res.data.data.token);
       sweetAlert("Iniciaste sesión", "Iniciaste sesión", "success");
-      setUser(true);
+      const data = res.data.data.user;
+      setUser({ ...data });
     })
     .catch((err) => {
       console.log(err);

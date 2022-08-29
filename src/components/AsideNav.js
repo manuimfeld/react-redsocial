@@ -1,7 +1,7 @@
 import React from "react";
 import "../styles/aside.css";
 
-const AsideNav = () => {
+const AsideNav = ({ setUser }) => {
   return (
     <section className="aside-nav">
       <ul>
@@ -13,7 +13,14 @@ const AsideNav = () => {
         <li>Perfil</li>
         <li>Más opciones</li>
         <li>
-          <button>Cerrar sesión</button>
+          <button
+            onClick={() => {
+              localStorage.removeItem("JWT");
+              setUser(false);
+            }}
+          >
+            Cerrar sesión
+          </button>
         </li>
       </ul>
     </section>
